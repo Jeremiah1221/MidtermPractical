@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab 2</title>
+
+         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+           integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+           crossorigin=""/>
+
+         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+           crossorigin=""></script>
+
+			<style type="text/css">
+			html, body { margin: 0; padding: 0; height: 100%; }
+			#map { min-height: 100%; }
+			</style>
+    </head>
+
+    <body>
+	<h1>An Introduction to NEIU: Jeremiah Hunt's Experience </h1>
+        <div id="map" style="height: 500px"></div>
+
+        <script type="text/javascript">
+
+         var map = L.map('map', {center: [41.98, -87.72],zoom: 6});
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+               attribution: '@ <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+               maxZoom: 21,
+               minZoom: 17
+            }).addTo(map);
+			
+		var placeholderIcon = L.icon({
+			iconUrl: 'placeholder.png', // url that links to the icon image file
+			iconSize:     [39, 39], // size of the icon image in pixels
+			iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+			popupAnchor:  [10, 20] // point from which the popup should open, relative to the iconAnchor
+		});
+		
+			var marker1 = L.marker([41.9804495,-87.7173295], {icon: placeholderIcon}).addTo(map);
+			var marker2 = L.marker([41.9804918,-87.7193098], {icon: placeholderIcon}).addTo(map);
+			var marker3 = L.marker([41.9796545,-87.719800],{icon: placeholderIcon}).addTo(map);
+			var marker4 = L.marker([41.9780725,-87.7174456],{icon: placeholderIcon}).addTo(map);
+			var marker5 = L.marker([41.9813863,-87.7185005],{icon: placeholderIcon}).addTo(map);
+			var pic1 = '<img src="https://s3-media4.fl.yelpcdn.com/bphoto/EKtnGCJaSqWND4dhWcVUzA/o.jpg" alt="BBH" width="250">';
+			var pic2 = '<img src="https://mltixcu7ksho.i.optimole.com/Fcz_xwA.Xymn~5b79e/w:auto/h:auto/q:90/https://www.spc-inc.com/wp-content/uploads/2019/10/NEIU-Photo-2.jpg" alt="NEIU Library" width="250">';
+			var pic3 = '<img src="https://th.bing.com/th/id/R.e7aeb9de04f2ce7e6a9b9de897ee6f7d?rik=vGjdwL2j0W8OUA&riu=http%3a%2f%2fprimeraeng.com%2fwp-content%2fuploads%2f2017%2f08%2fNest_0540_JohnnyStevens_Hero.jpg&ehk=pqhTcOdnFKQrXyC6OqhAFtM99jewXJzyza4GFOOoXoE%3d&risl=&pid=ImgRaw&r=0" alt=The Nest" width="250">';
+			var pic4 = '<img src="https://www.neiu.edu/sites/neiu.edu/files/styles/feature_image/public/university-life/unit-dept-homepage-feature-images/2016/02/15/campus-rec-center.jpg?itok=3-RXP-Dn" alt=The PE Complex" width="250">';
+			var pic5 = '<img src="https://www.neiu.edu/sites/default/files/styles/feature_image/public/hub.neiu.edu/news-images/2018/06/06/LOC-student-union-5%20(4).jpg?itok=KstXppZP" alt=Student Union" width="250">';
+			
+marker1.bindPopup('<p style="color:black; font-weight:bold"> I spend all of my class time in the BBH building, for my Environmental Studies, Biology, and GIS courses. I am currently taking Interactive Cartography with Dr. Ting Liu in room 242  </p>' + pic1);
+marker2.bindPopup('<p style="color:seagreen; font-weight:bold"> The NEIU library is where you will attend scheduled tutoring appointments, find academic resources, and have a quiet place to study during the day</p>' + pic2);
+marker3.bindPopup('<p style="color:red; font-weight:bold"> I moved to NEIU in August of 2021. There have been ups and downs since then, but nonetheless a transformative experience. To any new G&ES Students on campus, make the most of every opportunity. </p?>' + pic3);
+marker4.bindPopup('<p style="color:violet; font-weight:bold"> The PE Complex is a great location to burn off stress and meet new people</p?>' + pic4);        
+marker5.bindPopup('<p style="color:blue; font-weight:bold"> The Student Union is an excellemt place to meet new people, check out any clubs, and a nice place to stop for a snack in-between classes</p>' + pic5);		
+		</script>
+   </body>
+</html>
